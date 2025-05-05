@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>counter</title>
+</head>
+<style>
+	div{
+		border: 1px solid black;
+		width: 30%;
+		height: 220px;
+		margin:auto;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		padding: 20px;
+       background-color: black;
+       border-radius: 20px;
+	}
+	h1{
+		margin: auto;
+		padding: 15px;
+		font-size: 40px;
+		color: blue;
+	}
+	#value{
+		color: white;
+	}
+	button{
+		padding: 12px;
+		letter-spacing: 1px;
+		margin: 15px;
+	    border-radius: 12px;
+	    background-color: black;
+	    color: white;
+	    border: 2px solid white;
+	}
+   
+</style>
+<body>
+<div>
+	<h1>Counter</h1>
+	<h1 id="value">0</h1>
+	<button id="button1">Decrease</button>
+	<button id="button2">Increase</button>
+	<button id="button3" value="clear">Clear</button>
+</div>
+</body>
+<script>
+	let count=0;
+
+	const valueDisplay= document.getElementById('value');
+	const inbtn= document.getElementById('button2');
+	const decbtn=document.getElementById('button1');
+	const clear=document.getElementById('button3');
+
+	inbtn.addEventListener("click", () => {
+		count++;
+		valueDisplay.textContent=count;
+	});
+
+	decbtn.addEventListener("click", () =>{
+       count--;
+       valueDisplay.textContent=count;
+	});
+
+	clear.addEventListener("click",() =>{
+		count=0;
+		valueDisplay.textContent=count;
+	});
+</script>
+</html>
